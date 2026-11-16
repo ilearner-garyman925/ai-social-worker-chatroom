@@ -1,31 +1,30 @@
-# StudyMate
+# Academic Advisory Portal
 
-English, two-page academic advisor experience based on the approved mist-blue/lavender UI.
+Two-page English advisor prototype with a mist-blue/lavender interface.
 
-## Run locally
+## Run
 
 `python -m http.server 5173 --directory dist`
 
-Open http://localhost:5173. No build step or package installation is required.
-
 ## Current behaviour
 
-- Three advisors with separate illustrated classroom assets and subject-specific guided lessons.
-- Two introductory replies open an MC question; selecting an answer shows feedback. Continue returns to spoken conversation.
-- Browser speech synthesis and English speech recognition when supported and permission is granted. Typed answers are always available.
-- In-session searchable history, message replay, captions, elapsed time, collapsible history and responsive layout.
-- End confirmation, session summary, restart and advisor switching.
+- City University of Hong Kong welcome page and three advisors without subject badges.
+- Desktop conversation: searchable voice-style history on the left, advisor in the centre, general health survey on the right.
+- Start speaking enables browser speech recognition. A completed utterance is submitted automatically without a transcript review step. After the scripted advisor response finishes, listening resumes.
+- User waveform uses 45% opacity and microphone amplitude; advisor waveform uses full-colour animated purple bars while browser speech synthesis plays. Advisor bars indicate playback, not measured output amplitude.
+- State changes fade in/out. Reduced-motion preferences disable continuous animation. Captions and the bubble's top badges are removed; the speaking status appears in small text below the wave.
+- Mute or ending stops audio and releases the microphone. Permission failures show a typed-input fallback. This is turn-taking, not simultaneous interruption/full-duplex voice.
+- History offers Show text and speech-synthesis replay. History waveforms are illustrative, not saved recordings.
+- Only the supplied survey question 3/12 is implemented, with neutral options and in-memory confirmation. No scoring, diagnosis, invented questions or claim that the entire survey is complete.
 
-This is a frontend with guided lesson scripts, not a connected generative AI service. No API keys or server-side AI are configured. Transcripts remain in memory and clear when starting a new session or reloading. Browser speech recognition may use the browser vendor's service. Microphone availability depends on browser support and permission.
+This frontend uses guided reply scripts, not a connected generative AI service. Transcripts stay in page memory and clear on a new session or reload. Browser speech recognition may use the browser vendor's service. Voice support depends on browser and microphone permissions.
 
 ## Validation
 
-JavaScript syntax check passed. Browser-checked advisor selection, typed replies, MC incorrect and correct feedback, continuation, search, captions, ending and history retention. Desktop and narrow layouts visually checked. Microphone denial fallback observed; successful live microphone recognition has not been verified.
+`node --check dist/app.js`
+
+`node --test tests/voice-lifecycle.test.cjs`
+
+Five lifecycle tests cover late microphone permission, duplicate recognition results, cleanup, automatic listening after advisor playback, recognition errors and a speech-playback startup timeout. Browser UI and microphone-denial fallback checked. Successful live microphone capture has not been verified in this environment.
 
 The existing private Sites project is declared in `.openai/hosting.json`.
-
-## Academic Advisory Portal update
-
-Page 1 uses City University of Hong Kong, Welcome to Academic Advisory Portal and Start Session. Desktop session layout is chat history on the left, advisor in the middle and general health survey on the right. History has illustrative waveforms with text-to-speech replay and Show text controls; these are not audio recordings.
-
-Only the supplied question 3/12 is implemented. Selection uses neutral radio buttons with no scoring, diagnosis or correct/incorrect feedback. Confirmation is kept in memory for this session; remaining questions are not invented and the full survey is not marked complete. The current guided script is not a live advisor service.
