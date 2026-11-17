@@ -1,0 +1,29 @@
+{
+  "source": "work/upright-mouth-v3/package/model.json",
+  "layers": 13,
+  "textures": 19,
+  "hashes": {
+    "model.json": "160bb130b26f64b48c1764a828a7d8c61db980005bdc8f51135d6ee4c8804028",
+    "textures/base.png": "8bf59c4fbaa4d34f980a25ffea37693ab931f0587c02797e0cca9bd4f5b0b7bd",
+    "textures/eye_L.png": "1f2ec27c5f117ba8a52255bb256f600074f0067ea8819db9c05d1e9a68032bf9",
+    "textures/eye_R.png": "5320ee0d4d0300c91c346a14fe53d5d148a12e9c6c36cb3ffbe2ce7fe8e996a1",
+    "textures/iris_L.png": "41b4adf8c0d24ab1bae28bd3d4534e9b19b59dd05aab5ad22cf9048b5989f94b",
+    "textures/iris_R.png": "dc9e9c2c60afa5c5f561b582386a40b19ea63e049def8af95711178b3cf258a6",
+    "textures/lid_L.png": "d841598b27257a9c87b819fbdfeadc03871db07f9248e26ca4aba149fca983e5",
+    "textures/lid_R.png": "dbab6266407ce7792d98416d8afdc198369e22ddc14e32c01692e6e750148843",
+    "textures/mask_L.png": "3d1948c57696187d9562c6f26e3d3d68f8fa65e7a38f9ae584696d80511080e4",
+    "textures/mask_R.png": "3d1948c57696187d9562c6f26e3d3d68f8fa65e7a38f9ae584696d80511080e4",
+    "textures/mouth_closed.png": "e060d10ea8a1766c4d6c322cf579225d32c13b8c067c62b6af03838ed7cd6886",
+    "textures/mouth_fv.png": "b6f83ec1545fbe6fd480d042c9bee5b11d0b000f29d4f5c87d0bb69179723ede",
+    "textures/mouth_half.png": "79b38017a078277e30eabec43e10d071bbea0f2c9bc4b28168b38234cea00b05",
+    "textures/mouth_l.png": "90025b2f169e6250b36f2ed160fa1c9362eec34c86f4e5eeed995ffddafef484",
+    "textures/mouth_o.png": "ea502712b6ad8f903f779f097da8d264cf7b56feeda45e7925cce6cc66182221",
+    "textures/mouth_open.png": "06dced4c405e1fad365aabf8f33e5b3b25df4306e95da7ebb3ce0f7802603eb6",
+    "textures/mouth_rest.png": "15e4863c57e4faf3cb9857428b7659a9d8db3c2a741545ed24f72deb036c9b9b",
+    "textures/mouth_round.png": "8345f6a3a9cdda4b38fa50e4c6ba66bc82cfc70f311bbfc0ac2cf2fba89a8ede",
+    "textures/mouth_th.png": "d6b54664e2cd07bc9c341cbb5687774d1ab9e3a71861d9d4dd363b28d264ec64",
+    "textures/mouth_wide.png": "496434c11178dd1bfe6983f8bce6e7a651dcd94ccf5f42ac0d20b21dfccb731e"
+  },
+  "packageSha256": "41facfe4834a5dabc490ea0b2f49ca85b4a2efbf4792715f40b30b31113d4869",
+  "scope": "User approved v3. Ten distinct mouths. Four additions and closed are selectable via official expression-weighted local layers; automatic audio uses existing six-frame classifier. No new phoneme recognition."
+}

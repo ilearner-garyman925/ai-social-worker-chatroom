@@ -1,0 +1,3 @@
+const smooth=x=>{x=Math.max(0,Math.min(1,x));return x*x*(3-2*x);};
+export function blinkOpening(time,slow=false){const t=Math.max(0,time),down=slow?.65:.09,hold=slow?.3:.045,up=slow?.85:.14;if(t<down)return 1-smooth(t/down);if(t<down+hold)return 0;if(t<down+hold+up)return smooth((t-down-hold)/up);return 1;}
+export function blinkEyes(mode,time,left=1,right=1){const clamp=x=>Math.max(0,Math.min(1,Number.isFinite(x)?x:1));if(mode==='manual')return {eyeLOpen:clamp(left),eyeROpen:clamp(right)};const open=mode==='slow'?blinkOpening(time,true):mode==='auto'?blinkOpening(time%4.5):1;return {eyeLOpen:open,eyeROpen:open};}

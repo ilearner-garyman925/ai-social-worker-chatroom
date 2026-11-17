@@ -1,0 +1,336 @@
+{
+  "format": "livliv-model",
+  "version": 4,
+  "name": "女孩 · 十口形 v3",
+  "meta": {
+    "generator": {
+      "name": "Character Speaking Lab localized mouth builder",
+      "build": "1"
+    }
+  },
+  "requires": [],
+  "canvas": [
+    1025,
+    1535
+  ],
+  "profile": {
+    "id": "painterly",
+    "facing": "front"
+  },
+  "rig": {
+    "yaw": 0,
+    "pitch": 0,
+    "roll": 0,
+    "bulge": 0,
+    "wind": 0,
+    "breath": 0.5,
+    "sway": 0,
+    "brow": 0,
+    "hair_limit": 0,
+    "body": {
+      "yaw": 0,
+      "roll": 0,
+      "breath": 0.4,
+      "bust": 0
+    },
+    "jaw": 0
+  },
+  "anchors": {
+    "head": {
+      "cx": 507,
+      "cy": 166,
+      "rx": 108,
+      "ry": 145
+    },
+    "face": [
+      428,
+      112,
+      583,
+      283
+    ],
+    "neck_y": 302,
+    "collar_y": 320,
+    "top_y": 8,
+    "bottom_y": 1512,
+    "hair_root_y": 70,
+    "chest": {
+      "cx": 505,
+      "cy": 460,
+      "rx": 130,
+      "ry": 140
+    },
+    "eyes": [
+      [
+        453,
+        170,
+        497,
+        191
+      ],
+      [
+        519,
+        170,
+        563,
+        191
+      ]
+    ]
+  },
+  "expressions": [
+    {
+      "id": "x_mouth_o",
+      "label": {
+        "zh-Hant": "大圓口 O",
+        "en": "O"
+      }
+    },
+    {
+      "id": "x_mouth_fv",
+      "label": {
+        "zh-Hant": "唇齒 F/V",
+        "en": "FV"
+      }
+    },
+    {
+      "id": "x_mouth_th",
+      "label": {
+        "zh-Hant": "齒間 TH",
+        "en": "TH"
+      }
+    },
+    {
+      "id": "x_mouth_l",
+      "label": {
+        "zh-Hant": "舌尖 L",
+        "en": "L"
+      }
+    },
+    {
+      "id": "x_mouth_closed",
+      "label": {
+        "zh-Hant": "閉唇 M/B/P",
+        "en": "CLOSED"
+      }
+    }
+  ],
+  "layers": [
+    {
+      "id": "intact_base",
+      "texture": "textures/base.png",
+      "x": 0,
+      "y": 0,
+      "w": 1025,
+      "h": 1535,
+      "group": "body",
+      "depth": 0
+    },
+    {
+      "id": "lid_L",
+      "texture": "textures/lid_L.png",
+      "role": "lid_L",
+      "x": 438,
+      "y": 154,
+      "w": 74,
+      "h": 58,
+      "group": "body",
+      "depth": 0
+    },
+    {
+      "id": "eye_L",
+      "texture": "textures/eye_L.png",
+      "role": "eye_L",
+      "mask": "textures/mask_L.png",
+      "pivot": [
+        475,
+        186
+      ],
+      "x": 438,
+      "y": 154,
+      "w": 74,
+      "h": 58,
+      "group": "body",
+      "depth": 0
+    },
+    {
+      "id": "iris_L",
+      "texture": "textures/iris_L.png",
+      "role": "iris_L",
+      "clip": "eye_L",
+      "pivot": [
+        475,
+        186
+      ],
+      "range": [
+        2,
+        1.2
+      ],
+      "x": 438,
+      "y": 154,
+      "w": 74,
+      "h": 58,
+      "group": "body",
+      "depth": 0
+    },
+    {
+      "id": "lid_R",
+      "texture": "textures/lid_R.png",
+      "role": "lid_R",
+      "x": 504,
+      "y": 154,
+      "w": 74,
+      "h": 58,
+      "group": "body",
+      "depth": 0
+    },
+    {
+      "id": "eye_R",
+      "texture": "textures/eye_R.png",
+      "role": "eye_R",
+      "mask": "textures/mask_R.png",
+      "pivot": [
+        541,
+        186
+      ],
+      "x": 504,
+      "y": 154,
+      "w": 74,
+      "h": 58,
+      "group": "body",
+      "depth": 0
+    },
+    {
+      "id": "iris_R",
+      "texture": "textures/iris_R.png",
+      "role": "iris_R",
+      "clip": "eye_R",
+      "pivot": [
+        541,
+        186
+      ],
+      "range": [
+        2,
+        1.2
+      ],
+      "x": 504,
+      "y": 154,
+      "w": 74,
+      "h": 58,
+      "group": "body",
+      "depth": 0
+    },
+    {
+      "id": "speaking_mouth",
+      "role": "mouth",
+      "texture": "textures/mouth_rest.png",
+      "frames": [
+        "textures/mouth_rest.png",
+        "textures/mouth_half.png",
+        "textures/mouth_open.png",
+        "textures/mouth_round.png",
+        "textures/mouth_wide.png",
+        "textures/mouth_closed.png"
+      ],
+      "visemes": [
+        "closed",
+        "half",
+        "open",
+        "round",
+        "wide",
+        "shut"
+      ],
+      "x": 452,
+      "y": 210,
+      "w": 112,
+      "h": 78,
+      "pivot": [
+        508,
+        238
+      ],
+      "group": "body",
+      "depth": 0
+    },
+    {
+      "id": "manual_mouth_o",
+      "texture": "textures/mouth_o.png",
+      "x": 452,
+      "y": 210,
+      "w": 112,
+      "h": 78,
+      "pivot": [
+        508,
+        238
+      ],
+      "group": "body",
+      "depth": 0,
+      "show": {
+        "x_mouth_o": 1
+      }
+    },
+    {
+      "id": "manual_mouth_fv",
+      "texture": "textures/mouth_fv.png",
+      "x": 452,
+      "y": 210,
+      "w": 112,
+      "h": 78,
+      "pivot": [
+        508,
+        238
+      ],
+      "group": "body",
+      "depth": 0,
+      "show": {
+        "x_mouth_fv": 1
+      }
+    },
+    {
+      "id": "manual_mouth_th",
+      "texture": "textures/mouth_th.png",
+      "x": 452,
+      "y": 210,
+      "w": 112,
+      "h": 78,
+      "pivot": [
+        508,
+        238
+      ],
+      "group": "body",
+      "depth": 0,
+      "show": {
+        "x_mouth_th": 1
+      }
+    },
+    {
+      "id": "manual_mouth_l",
+      "texture": "textures/mouth_l.png",
+      "x": 452,
+      "y": 210,
+      "w": 112,
+      "h": 78,
+      "pivot": [
+        508,
+        238
+      ],
+      "group": "body",
+      "depth": 0,
+      "show": {
+        "x_mouth_l": 1
+      }
+    },
+    {
+      "id": "manual_mouth_closed",
+      "texture": "textures/mouth_closed.png",
+      "x": 452,
+      "y": 210,
+      "w": 112,
+      "h": 78,
+      "pivot": [
+        508,
+        238
+      ],
+      "group": "body",
+      "depth": 0,
+      "show": {
+        "x_mouth_closed": 1
+      }
+    }
+  ]
+}

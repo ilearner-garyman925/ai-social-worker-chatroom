@@ -28,3 +28,11 @@ This frontend uses guided reply scripts, not a connected generative AI service. 
 Five lifecycle tests cover late microphone permission, duplicate recognition results, cleanup, automatic listening after advisor playback, recognition errors and a speech-playback startup timeout. Browser UI and microphone-denial fallback checked. Successful live microphone capture has not been verified in this environment.
 
 The existing private Sites project is declared in `.openai/hosting.json`.
+
+## LivLiv avatar
+
+Ms May now uses the supplied girl model with vendored @livliv-dev/player 0.3.0 (Apache-2.0; LICENSE and NOTICE included). Supplied natural idle code drives blinking, breathing and bounded gaze. The other two advisors retain their original artwork. The model and all textures are deployed locally. A portrait remains visible while loading or if WebGL fails.
+
+Speaking motion follows browser TTS lifecycle and word-boundary cues, with procedural mouth movement between cues. It is illustrative, not audio-sampled or phoneme-accurate lip sync. Listening closes the mouth. Switching advisors disposes the Player; hidden tabs pause it. Reduced-motion settings disable breathing/sway/gaze motion.
+
+Browser validation: model reached avatar-ready with no console errors, and layout retained history, survey and waveform. Browser TTS did not reliably start in the test environment, so audible lip-sync still needs user verification. Existing five voice lifecycle tests pass.
