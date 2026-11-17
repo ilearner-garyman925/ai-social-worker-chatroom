@@ -44,3 +44,7 @@ The four fixed Ms May advisor replies now use locally generated Microsoft Zira W
 Official Player idle is enabled for breathing, blinking, gaze and sway. A final driver scales head/body movement to 35%; voice motion is 0.35, bounce is false. A deployment copy of model.json enables modest sway/body response; the original supplied package remains untouched. Reduced motion disables sway/head movement. The UI and waveform styling are unchanged.
 
 Browser validation observed avatar-ready, speaking mouth shape during actual WAV playback, and Ready to talk after the clip ended with no console errors. Eight lifecycle tests cover existing recording flow plus audio callbacks, late model readiness after stopping, and playback failure.
+
+## Soft-focus advisory room
+
+Ms May's stage now uses a generated empty campus advisory-room background, with diffuse window light, lavender-blue walls, pale wood shelves and plants. A light lavender tint and subtle avatar shadow blend the layers; the voice card remains legible. Only background CSS and its asset changed; LivLiv motion, lip sync and waveform behaviour are unchanged.

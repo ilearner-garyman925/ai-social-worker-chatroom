@@ -24,3 +24,9 @@
 .avatar-ready canvas{opacity:1}.avatar-ready .girl-poster{opacity:0}
 .girl-stage.talking .girl-character{animation:none;transform:none}
 @media(prefers-reduced-motion:reduce){.girl-character canvas,.girl-poster{transition:none}}
+/* Soft-focus campus advisory room; background only, independent of avatar/audio. */
+.girl-stage{background-color:#e3e7f5;background-image:linear-gradient(180deg,rgba(229,234,253,.16),rgba(222,219,245,.2)),url('assets/advisory-room-v1.png');background-size:cover;background-position:center center;isolation:isolate}
+.girl-character{filter:drop-shadow(4px 7px 8px rgba(61,64,99,.12))}
+.girl-stage .presence,.girl-stage .timer{background:rgba(255,255,255,.88);backdrop-filter:blur(8px)}
+.girl-stage .voice-bubble{background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.85)}
+@media(max-width:760px){.girl-stage{background-position:48% center}}
