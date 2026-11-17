@@ -36,3 +36,11 @@ Ms May now uses the supplied girl model with vendored @livliv-dev/player 0.3.0 (
 Speaking motion follows browser TTS lifecycle and word-boundary cues, with procedural mouth movement between cues. It is illustrative, not audio-sampled or phoneme-accurate lip sync. Listening closes the mouth. Switching advisors disposes the Player; hidden tabs pause it. Reduced-motion settings disable breathing/sway/gaze motion.
 
 Browser validation: model reached avatar-ready with no console errors, and layout retained history, survey and waveform. Browser TTS did not reliably start in the test environment, so audible lip-sync still needs user verification. Existing five voice lifecycle tests pass.
+
+## Actual-audio lip sync update
+
+The four fixed Ms May advisor replies now use locally generated Microsoft Zira WAV clips (regenerate with scripts/generate-demo-voice.ps1). LivLiv startLipSync analyses the same HTMLAudioElement that plays the clip, driving mouth openness and vowel shape from actual audio. Procedural mouth oscillation has been removed. Unscripted history text still uses browser TTS without pretending to have audio-driven lips. No external TTS service or AI backend was added.
+
+Official Player idle is enabled for breathing, blinking, gaze and sway. A final driver scales head/body movement to 35%; voice motion is 0.35, bounce is false. A deployment copy of model.json enables modest sway/body response; the original supplied package remains untouched. Reduced motion disables sway/head movement. The UI and waveform styling are unchanged.
+
+Browser validation observed avatar-ready, speaking mouth shape during actual WAV playback, and Ready to talk after the clip ended with no console errors. Eight lifecycle tests cover existing recording flow plus audio callbacks, late model readiness after stopping, and playback failure.

@@ -1,30 +1,43 @@
 import {Player} from '../vendor/livliv/index.js';
-import {createNaturalIdle} from './upright-idle.js';
-let player,observer,generation=0,talking=false,boundaryAt=0;
-const now=()=>performance.now()/1000;
+import {startLipSync} from '../vendor/livliv/voice.js';
+let player,observer,generation=0,talking=false,audio=null,sync=null,clips={};
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-export function setTalking(value){talking=value;if(!value)boundaryAt=0;}
-export function word(){boundaryAt=now();}
-export function dispose(){generation++;observer?.disconnect();observer=null;player?.dispose();player=null;talking=false;}
+export function setTalking(value){talking=value;}
+export function word(){} // Browser TTS has no audio samples; never fake mouth motion.
+export function stopVoice(){if(audio){audio.onplaying=audio.onended=audio.onerror=null;audio.pause();audio.currentTime=0;}talking=false;}
+export function dispose(){generation++;stopVoice();sync?.stop();sync=null;observer?.disconnect();observer=null;player?.dispose();player=null;audio=null;}
+export function hasClip(text){return Boolean(clips[text]&&audio&&sync);}
+export async function playVoice(text,callbacks){
+ if(!hasClip(text))throw new Error('No recorded reply');
+ stopVoice();const current=audio;
+ current.onplaying=()=>{talking=true;callbacks.start();};
+ current.onended=()=>{talking=false;callbacks.end();};
+ current.onerror=()=>{talking=false;callbacks.error();};
+ current.src=clips[text];
+ await current.play();
+}
 export async function mount(canvas){
  dispose();const ticket=generation;
- const idle=createNaturalIdle();idle.reset(now());
- const p=new Player(canvas,{idle:false,followPointer:false,autoplay:false,maxPixelRatio:2});player=p;
+
+ const p=new Player(canvas,{idle:!reduced.matches,followPointer:false,autoplay:false,maxPixelRatio:2});player=p;
  p.use({order:30,update({params}){
-  const t=now();Object.assign(params,idle.sample(t));
-  if(reduced.matches){params.breath=0;params.bodyZ=0;params.eyeBallX=0;params.eyeBallY=0;}
-  for(const k of ['angleX','angleY','angleZ','browLY','browRY','bodyX','smile'])params[k]=0;
-  // Browser TTS exposes timing events, not audio samples: illustrative speaking motion.
-  const pulse=.5+.5*Math.sin(t*23);
-  params.mouthOpen=talking?Math.max(.05,(.15+.65*pulse)*(t-boundaryAt<.18?1:.8)):0;
-  params.vowel=talking?Math.sin(t*8)*.85:0;
+  // Keep official idle and audio motion; gently attenuate it for this photographic rig.
+  for(const k of ['angleX','angleY','angleZ','bodyX','bodyZ'])params[k]*=reduced.matches?0:.35;
+  if(reduced.matches){params.breath=0;params.eyeBallX=0;params.eyeBallY=0;}
+  if(!talking){params.mouthOpen=0;params.vowel=0;}
  }});
  try{
-  await p.load('./assets/girl/girl.livliv');
+  await p.load('./assets/girl/model.json');
   if(ticket!==generation)return;
   const frame=()=>{const w=canvas.clientWidth,h=canvas.clientHeight;if(!w||!h)return;const s=h/760;Object.assign(p.view,{head:false,zoom:s/Math.min(w/1025,h/1535),x:(1025/2-507)*s/w,y:(345-1535/2)*s/h});p.resize();};
+  clips=await fetch('./assets/voice/clips.json').then(r=>{if(!r.ok)throw new Error('Voice manifest unavailable');return r.json();});
+  if(ticket!==generation)return;
+  const element=new Audio();element.preload='auto';audio=element;
+  const handle=await startLipSync(p,element,{motion:reduced.matches?0:.35,bounce:false});
+  if(ticket!==generation){handle.stop();return;}sync=handle;
   observer=new ResizeObserver(frame);observer.observe(canvas);frame();p.play();canvas.parentElement.classList.add('avatar-ready');
  }catch(error){if(ticket===generation){p.dispose();player=null;canvas.parentElement.classList.add('avatar-failed');console.error('Avatar load failed',error);}}
 }
+reduced.addEventListener('change',()=>{if(player)player.idle=!reduced.matches;});
 document.addEventListener('visibilitychange',()=>{if(document.hidden)player?.pause();else player?.play();});
 window.addEventListener('pagehide',dispose);

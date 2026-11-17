@@ -1,7 +1,7 @@
 {
   "format": "livliv-model",
   "version": 4,
-  "name": "女孩 · 十口形 v3",
+  "name": "\u5973\u5b69 \u00b7 \u5341\u53e3\u5f62 v3",
   "meta": {
     "generator": {
       "name": "Character Speaking Lab localized mouth builder",
@@ -24,12 +24,12 @@
     "bulge": 0,
     "wind": 0,
     "breath": 0.5,
-    "sway": 0,
+    "sway": 0.3,
     "brow": 0,
     "hair_limit": 0,
     "body": {
-      "yaw": 0,
-      "roll": 0,
+      "yaw": 0.1,
+      "roll": 0.15,
       "breath": 0.4,
       "bust": 0
     },
@@ -78,35 +78,35 @@
     {
       "id": "x_mouth_o",
       "label": {
-        "zh-Hant": "大圓口 O",
+        "zh-Hant": "\u5927\u5713\u53e3 O",
         "en": "O"
       }
     },
     {
       "id": "x_mouth_fv",
       "label": {
-        "zh-Hant": "唇齒 F/V",
+        "zh-Hant": "\u5507\u9f52 F/V",
         "en": "FV"
       }
     },
     {
       "id": "x_mouth_th",
       "label": {
-        "zh-Hant": "齒間 TH",
+        "zh-Hant": "\u9f52\u9593 TH",
         "en": "TH"
       }
     },
     {
       "id": "x_mouth_l",
       "label": {
-        "zh-Hant": "舌尖 L",
+        "zh-Hant": "\u820c\u5c16 L",
         "en": "L"
       }
     },
     {
       "id": "x_mouth_closed",
       "label": {
-        "zh-Hant": "閉唇 M/B/P",
+        "zh-Hant": "\u9589\u5507 M/B/P",
         "en": "CLOSED"
       }
     }
