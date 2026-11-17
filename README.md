@@ -48,3 +48,7 @@ Browser validation observed avatar-ready, speaking mouth shape during actual WAV
 ## Soft-focus advisory room
 
 Ms May's stage now uses a generated empty campus advisory-room background, with diffuse window light, lavender-blue walls, pale wood shelves and plants. A light lavender tint and subtle avatar shadow blend the layers; the voice card remains legible. Only background CSS and its asset changed; LivLiv motion, lip sync and waveform behaviour are unchanged.
+
+## Closer avatar framing
+
+Ms May uses a closer upper-body camera crop (560 model units versus 760), with a width cap for narrow screens. The voice card is reduced to about 112px and moved lower, revealing more shoulders and torso. Background, motion drivers and audio sync are unchanged. Desktop composition visually checked during playback.

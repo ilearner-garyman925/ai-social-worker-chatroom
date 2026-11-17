@@ -30,3 +30,10 @@
 .girl-stage .presence,.girl-stage .timer{background:rgba(255,255,255,.88);backdrop-filter:blur(8px)}
 .girl-stage .voice-bubble{background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.85)}
 @media(max-width:760px){.girl-stage{background-position:48% center}}
+/* Closer upper-body framing, with a dedicated compact voice area below. */
+.girl-stage .girl-character{inset:24px 0 110px}
+.girl-stage .voice-bubble{min-height:112px;padding:12px 18px 10px;gap:2px;bottom:14px}
+.girl-stage .voice-visual{height:46px}.girl-stage .live-wave{height:46px}
+.girl-stage .voice-copy{min-height:37px}
+.girl-stage .girl-poster{height:274%;width:100%;top:0;object-fit:contain;object-position:50% 0}
+@media(max-width:760px){.girl-stage .voice-bubble{min-height:108px;padding:10px 14px;bottom:12px}.girl-stage .girl-character{inset:24px 0 108px}}

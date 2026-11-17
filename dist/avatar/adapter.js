@@ -29,7 +29,7 @@ export async function mount(canvas){
  try{
   await p.load('./assets/girl/model.json');
   if(ticket!==generation)return;
-  const frame=()=>{const w=canvas.clientWidth,h=canvas.clientHeight;if(!w||!h)return;const s=h/760;Object.assign(p.view,{head:false,zoom:s/Math.min(w/1025,h/1535),x:(1025/2-507)*s/w,y:(345-1535/2)*s/h});p.resize();};
+  const frame=()=>{const w=canvas.clientWidth,h=canvas.clientHeight;if(!w||!h)return;const s=Math.min(h/560,w/600);Object.assign(p.view,{head:false,zoom:s/Math.min(w/1025,h/1535),x:(1025/2-507)*s/w,y:(250-1535/2)*s/h});p.resize();};
   clips=await fetch('./assets/voice/clips.json').then(r=>{if(!r.ok)throw new Error('Voice manifest unavailable');return r.json();});
   if(ticket!==generation)return;
   const element=new Audio();element.preload='auto';audio=element;
