@@ -60,3 +60,7 @@ Ms Lam now loads the supplied woman-rig-v1 model and textures via the shared Liv
 ## Calmer animation transitions
 
 Both Ms Lam and Ms May retain LivLiv official idle targets but now ease body/head transitions over 0.9s, gaze over 0.65s and breathing over 1.2s using frame-rate-independent smoothing. This slows settling and softens sudden changes, rather than altering speech playback or the idle clock. Eye closure and mouth/vowel parameters bypass smoothing, preserving natural blinks and actual-audio lip sync. Reduced-motion settings remain immediate. Syntax check and eight voice lifecycle tests pass.
+
+## Softer mouth transitions
+
+Both photo avatars now smooth actual-audio mouth targets: 100ms opening response, 55ms closing response, and 140ms vowel-shape response (exponential time constants). Stopping playback resets mouth smoothing immediately. Speech speed, idle motion and sound wave are unchanged. These values reduce rapid shape changes while retaining quicker closure on pauses.

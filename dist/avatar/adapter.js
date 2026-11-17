@@ -32,7 +32,15 @@ export async function mount(canvas,model='girl'){
    settled[k]=reduced.matches?target:(settled[k]??target)+(target-(settled[k]??target))*blend;
    params[k]=settled[k];
   }
-  if(!talking){params.mouthOpen=0;params.vowel=0;}
+  // Smooth real audio targets, without delaying the audio or keeping a stale mouth pose.
+  if(!talking){settled.mouthOpen=settled.vowel=0;params.mouthOpen=0;params.vowel=0;}
+  else for(const k of ['mouthOpen','vowel']){
+   const target=params[k],previous=settled[k]??0;
+   const duration=k==='vowel'?.14:target<previous?.055:.10;
+   const blend=1-Math.exp(-Math.min(.1,Math.max(0,dt||1/60))/duration);
+   settled[k]=previous+(target-previous)*blend;
+   params[k]=settled[k];
+  }
  }});
  try{
   await p.load(`./assets/${model}/model.json`);
