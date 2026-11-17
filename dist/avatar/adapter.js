@@ -16,7 +16,7 @@ export async function playVoice(text,callbacks){
  current.src=clips[text];
  await current.play();
 }
-export async function mount(canvas){
+export async function mount(canvas,model='girl'){
  dispose();const ticket=generation;
 
  const p=new Player(canvas,{idle:!reduced.matches,followPointer:false,autoplay:false,maxPixelRatio:2});player=p;
@@ -27,9 +27,9 @@ export async function mount(canvas){
   if(!talking){params.mouthOpen=0;params.vowel=0;}
  }});
  try{
-  await p.load('./assets/girl/model.json');
+  await p.load(`./assets/${model}/model.json`);
   if(ticket!==generation)return;
-  const frame=()=>{const w=canvas.clientWidth,h=canvas.clientHeight;if(!w||!h)return;const s=Math.min(h/560,w/600);Object.assign(p.view,{head:false,zoom:s/Math.min(w/1025,h/1535),x:(1025/2-507)*s/w,y:(250-1535/2)*s/h});p.resize();};
+  const frame=()=>{const w=canvas.clientWidth,h=canvas.clientHeight;if(!w||!h)return;const mw=model==='woman'?1024:1025,cx=model==='woman'?509:507;const s=Math.min(h/560,w/600);Object.assign(p.view,{head:false,zoom:s/Math.min(w/mw,h/1535),x:(mw/2-cx)*s/w,y:(250-1535/2)*s/h});p.resize();};
   clips=await fetch('./assets/voice/clips.json').then(r=>{if(!r.ok)throw new Error('Voice manifest unavailable');return r.json();});
   if(ticket!==generation)return;
   const element=new Audio();element.preload='auto';audio=element;

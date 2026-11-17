@@ -52,3 +52,7 @@ Ms May's stage now uses a generated empty campus advisory-room background, with 
 ## Closer avatar framing
 
 Ms May uses a closer upper-body camera crop (560 model units versus 760), with a width cap for narrow screens. The voice card is reduced to about 112px and moved lower, revealing more shoulders and torso. Background, motion drivers and audio sync are unchanged. Desktop composition visually checked during playback.
+
+## Ms Lam woman avatar
+
+Ms Lam now loads the supplied woman-rig-v1 model and textures via the shared LivLiv adapter. Ms May retains the girl and Mr Chan retains his illustration. Both photo-style avatars use the advisory room, close framing, official gentle idle and existing audio-driven demo clips (same Zira voice). Source woman-rig-v1 files remain unchanged; only the deployed copy enables the same modest body response. Model loading uses per-advisor configuration and correct canvas width/centre. Browser checked Ms Lam model, portrait, conversation and audio with no console errors; eight lifecycle tests pass.

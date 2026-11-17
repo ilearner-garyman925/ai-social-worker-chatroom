@@ -37,3 +37,4 @@
 .girl-stage .voice-copy{min-height:37px}
 .girl-stage .girl-poster{height:274%;width:100%;top:0;object-fit:contain;object-position:50% 0}
 @media(max-width:760px){.girl-stage .voice-bubble{min-height:108px;padding:10px 14px;bottom:12px}.girl-stage .girl-character{inset:24px 0 108px}}
+.avatar.a0{background-image:url('assets/woman/portrait.png');background-size:280% auto;background-position:50% 3%;background-color:#e7e5f5}
