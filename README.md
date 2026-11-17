@@ -56,3 +56,7 @@ Ms May uses a closer upper-body camera crop (560 model units versus 760), with a
 ## Ms Lam woman avatar
 
 Ms Lam now loads the supplied woman-rig-v1 model and textures via the shared LivLiv adapter. Ms May retains the girl and Mr Chan retains his illustration. Both photo-style avatars use the advisory room, close framing, official gentle idle and existing audio-driven demo clips (same Zira voice). Source woman-rig-v1 files remain unchanged; only the deployed copy enables the same modest body response. Model loading uses per-advisor configuration and correct canvas width/centre. Browser checked Ms Lam model, portrait, conversation and audio with no console errors; eight lifecycle tests pass.
+
+## Calmer animation transitions
+
+Both Ms Lam and Ms May retain LivLiv official idle targets but now ease body/head transitions over 0.9s, gaze over 0.65s and breathing over 1.2s using frame-rate-independent smoothing. This slows settling and softens sudden changes, rather than altering speech playback or the idle clock. Eye closure and mouth/vowel parameters bypass smoothing, preserving natural blinks and actual-audio lip sync. Reduced-motion settings remain immediate. Syntax check and eight voice lifecycle tests pass.

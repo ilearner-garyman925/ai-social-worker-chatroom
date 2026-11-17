@@ -20,10 +20,18 @@ export async function mount(canvas,model='girl'){
  dispose();const ticket=generation;
 
  const p=new Player(canvas,{idle:!reduced.matches,followPointer:false,autoplay:false,maxPixelRatio:2});player=p;
- p.use({order:30,update({params}){
-  // Keep official idle and audio motion; gently attenuate it for this photographic rig.
+ const settled={};
+ p.use({order:30,update({params,dt}){
+  // Retain official idle targets, with slower settling for calm body and gaze transitions.
   for(const k of ['angleX','angleY','angleZ','bodyX','bodyZ'])params[k]*=reduced.matches?0:.35;
   if(reduced.matches){params.breath=0;params.eyeBallX=0;params.eyeBallY=0;}
+  for(const k of ['angleX','angleY','angleZ','bodyX','bodyZ','breath','eyeBallX','eyeBallY']){
+   const target=params[k];
+   const duration=k==='breath'?1.2:k.startsWith('eyeBall')?.65:.9;
+   const blend=1-Math.exp(-Math.min(.1,Math.max(0,dt||1/60))/duration);
+   settled[k]=reduced.matches?target:(settled[k]??target)+(target-(settled[k]??target))*blend;
+   params[k]=settled[k];
+  }
   if(!talking){params.mouthOpen=0;params.vowel=0;}
  }});
  try{
