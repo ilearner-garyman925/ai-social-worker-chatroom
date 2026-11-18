@@ -45,8 +45,8 @@ export async function mount(canvas,model='girl'){
  try{
   await p.load(`./assets/${model}/model.json`);
   if(ticket!==generation)return;
-  const frame=()=>{const w=canvas.clientWidth,h=canvas.clientHeight;if(!w||!h)return;const mw=model==='woman'?1024:1025,cx=model==='woman'?509:507;const s=Math.min(h/560,w/600);Object.assign(p.view,{head:false,zoom:s/Math.min(w/mw,h/1535),x:(mw/2-cx)*s/w,y:(250-1535/2)*s/h});p.resize();};
-  clips=await fetch('./assets/voice/clips.json').then(r=>{if(!r.ok)throw new Error('Voice manifest unavailable');return r.json();});
+  const frame=()=>{const w=canvas.clientWidth,h=canvas.clientHeight;if(!w||!h)return;const mw=model==='man'?887:model==='woman'?1024:1025,mh=model==='man'?1774:1535,cx=model==='man'?435:model==='woman'?509:507;const s=Math.min(h/560,w/600);Object.assign(p.view,{head:false,zoom:s/Math.min(w/mw,h/mh),x:(mw/2-cx)*s/w,y:(250-mh/2)*s/h});p.resize();};
+  clips=await fetch(model==='man'?'./assets/voice/man-clips.json':'./assets/voice/clips.json').then(r=>{if(!r.ok)throw new Error('Voice manifest unavailable');return r.json();});
   if(ticket!==generation)return;
   const element=new Audio();element.preload='auto';audio=element;
   const handle=await startLipSync(p,element,{motion:reduced.matches?0:.35,bounce:false});
