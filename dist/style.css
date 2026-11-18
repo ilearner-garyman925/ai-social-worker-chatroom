@@ -48,7 +48,49 @@
 .choose .intro{margin-bottom:24px}.choose .intro h1{font-size:36px}
 .cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;max-width:1050px;margin:0 auto}
 .cards .advisor{width:100%;min-width:0;padding:20px 12px 16px;min-height:0}
-.cards .avatar{width:120px;height:120px;margin:0 auto 14px;border-radius:50%}
+.cards .avatar{position:static;width:120px;height:120px;margin:0 auto 14px;border-radius:50%}
 .cards h2{font-size:21px;margin:0}.choose .start{margin-top:26px}
 @media(max-width:900px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:600px){.choose{padding:24px 16px}.choose .intro h1{font-size:27px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.cards .avatar{width:96px;height:96px}.cards h2{font-size:18px}.cards .advisor{padding:18px 10px}.choose .start{position:sticky;bottom:0;background:#f5f7fdf5;padding:14px 0 8px;z-index:3}.choose .start .fine{font-size:11px}}
+
+/* Mobile: readable portraits, a dedicated voice area and a spacious survey. */
+@media(max-width:760px){
+  .cards .advisor{text-align:center;border-width:2px;border-radius:20px}
+  .cards .advisor.selected{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+  .cards .selection{width:24px;height:24px;top:8px;right:8px}
+  .choose{padding-bottom:24px}
+  .choose .intro h1{font-size:clamp(25px,6.5vw,32px);line-height:1.2;letter-spacing:-.8px}
+  .choose .intro p{font-size:16px;line-height:1.5}
+  .choose .start{padding-bottom:max(12px,env(safe-area-inset-bottom));border-top:1px solid var(--line)}
+  .choose .start .primary{width:100%;min-width:0;min-height:52px}
+  .session header{padding:10px 12px;min-height:68px;justify-content:space-between}
+  .session .brand{min-width:0;max-width:185px;font-size:13px}
+  .session .danger{min-height:44px;font-size:12px;padding:8px 12px}
+  .session .danger .icon{display:none}
+  .workspace,.history-hidden .workspace{gap:24px;padding:16px 12px 28px}
+  .advisor-label{font-size:18px;gap:12px;padding-bottom:12px}
+  .advisor-label strong{font-size:14px;flex-shrink:0}
+  .girl-stage{height:clamp(390px,57svh,470px);max-height:none;border-radius:22px}
+  .girl-stage .girl-character{inset:36px 0 132px}
+  .girl-stage .voice-bubble{left:10px;right:10px;bottom:10px;min-height:112px;padding:10px 12px}
+  .girl-stage .voice-copy #voice-hint{font-size:12px;line-height:1.5}
+  .controls{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;padding:14px 0 10px}
+  .controls .primary,.controls .secondary{min-height:48px;font-size:14px;padding:10px 18px}
+  .status{font-size:13px;line-height:1.5;margin-bottom:12px}
+  .text-form input,.history .search input{font-size:16px}
+  .text-form button{min-height:46px;font-size:14px}
+  .survey{padding:22px 18px;border-radius:22px;scroll-margin-top:84px}
+  .survey-heading{font-size:19px;flex-wrap:wrap;line-height:1.4}
+  .survey-heading span{font-size:12px}
+  .survey-intro{font-size:15px;line-height:1.7;margin:16px 0 22px}
+  #health-options legend{font-size:21px;line-height:1.45;margin-bottom:20px}
+  .health-option{font-size:16px;min-height:56px;padding:14px;gap:12px;margin-bottom:12px}
+  .health-option input{width:20px;height:20px}
+  #confirm-survey{font-size:15px;min-height:50px}
+  #survey-status{font-size:14px}.survey-note{font-size:12px}
+  .history{height:480px;padding:18px;scroll-margin-top:84px}
+  .audio-play,.icon-button{min-width:44px;min-height:44px}
+  .text-toggle{min-height:44px;font-size:13px}
+  dialog{width:calc(100% - 32px);max-width:440px;padding:22px;box-sizing:border-box}
+  .dialog-actions{flex-wrap:wrap}.dialog-actions button{flex:1;white-space:nowrap}
+}
