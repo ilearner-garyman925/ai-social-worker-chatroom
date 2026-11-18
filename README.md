@@ -72,3 +72,8 @@ Added supplied man-rig-v1 as Mr Chan with its 887x1774 canvas and centred head a
 ## Seven advisor choices
 
 Added female-01 as Ms Wong, female-02 as Ms Lee, male-01 as Mr Lau, and male-02 as Mr Ho (provisional display names). Original three advisors remain. Selection uses a responsive 4/3/2-column grid. Avatar framing is now read from a per-model canvas/anchor manifest, preserving the existing close crop. New female/male advisors reuse existing respective Zira/David demo clips. All share gentle idle and softened actual-audio lip sync. Entering a session scrolls to its top. All four new models reached avatar-ready in browser, with no console errors; eight lifecycle tests passed.
+
+## Mr Leung elderly advisor
+
+Replaced the Ms May selection with Mr Leung using elderly-male-01-complete. The deployed copy uses the existing gentle sway, slow mouth transitions and David demo audio, with a 1024x1536 canvas centred at x=504. The supplied package remains unchanged. Desktop playback and mobile pinned survey view checked with no browser errors; eight voice lifecycle tests pass.
+

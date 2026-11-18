@@ -15,7 +15,7 @@
 @media(max-width:760px){.subtitle.voice-bubble{min-height:150px;padding:16px}.live-wave{gap:3px}.voice-copy #voice-label{font-size:15px}.voice-copy #voice-hint{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.voice-bubble,.live-wave,.live-wave i{transition:none!important}.voice-bubble.state-changing{opacity:1}.voice-bubble[data-state=speaking] .live-wave i{animation:none!important;transform:scaleY(.6)}.thinking-dots i{animation:none!important;opacity:.7}.voice-bubble[data-state=listening] .live-wave i{transform:scaleY(.38)}}
 /* Existing Ms May slot now uses the supplied LivLiv character. */
-.avatar.a2{background-image:url('assets/girl/portrait.png');background-size:280% auto;background-position:50% 3%;background-color:#e7e5f5}
+.avatar.a2{background-image:url('assets/elderly-male-01/portrait.png');background-size:280% auto;background-position:50% 3%;background-color:#e7e5f5}
 .girl-stage{background:radial-gradient(ellipse at 50% 30%,#f8f9ff 0%,#dce5f9 65%,#d9d5ef 100%)}
 .girl-stage .scene{display:none}
 .girl-character{position:absolute;inset:28px 0 120px;overflow:hidden}
