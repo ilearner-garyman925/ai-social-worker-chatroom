@@ -1,0 +1,37 @@
+{
+  "girl": {
+    "width": 1025,
+    "height": 1535,
+    "center": 507
+  },
+  "woman": {
+    "width": 1024,
+    "height": 1535,
+    "center": 509
+  },
+  "man": {
+    "width": 887,
+    "height": 1774,
+    "center": 435
+  },
+  "female-01": {
+    "width": 1024,
+    "height": 1536,
+    "center": 502
+  },
+  "female-02": {
+    "width": 1024,
+    "height": 1536,
+    "center": 510
+  },
+  "male-01": {
+    "width": 1024,
+    "height": 1536,
+    "center": 512
+  },
+  "male-02": {
+    "width": 887,
+    "height": 1774,
+    "center": 435
+  }
+}

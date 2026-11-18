@@ -39,3 +39,16 @@
 @media(max-width:760px){.girl-stage .voice-bubble{min-height:108px;padding:10px 14px;bottom:12px}.girl-stage .girl-character{inset:24px 0 108px}}
 .avatar.a0{background-image:url('assets/woman/portrait.png');background-size:280% auto;background-position:50% 3%;background-color:#e7e5f5}
 .avatar.a1{background-image:url('assets/man/portrait.png');background-size:280% auto;background-position:50% 2%;background-color:#e7e5f5}
+
+.avatar.a3{background-image:url('assets/female-01/portrait.png');background-size:280% auto;background-position:50% 2%;background-color:#e7e5f5}
+.avatar.a4{background-image:url('assets/female-02/portrait.png');background-size:280% auto;background-position:50% 2%;background-color:#e7e5f5}
+.avatar.a5{background-image:url('assets/male-01/portrait.png');background-size:280% auto;background-position:50% 2%;background-color:#e7e5f5}
+.avatar.a6{background-image:url('assets/male-02/portrait.png');background-size:280% auto;background-position:50% 2%;background-color:#e7e5f5}
+.choose{max-width:1200px;margin:auto;padding:28px 24px}
+.choose .intro{margin-bottom:24px}.choose .intro h1{font-size:36px}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;max-width:1050px;margin:0 auto}
+.cards .advisor{width:100%;min-width:0;padding:20px 12px 16px;min-height:0}
+.cards .avatar{width:120px;height:120px;margin:0 auto 14px;border-radius:50%}
+.cards h2{font-size:21px;margin:0}.choose .start{margin-top:26px}
+@media(max-width:900px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.choose{padding:24px 16px}.choose .intro h1{font-size:27px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.cards .avatar{width:96px;height:96px}.cards h2{font-size:18px}.cards .advisor{padding:18px 10px}.choose .start{position:sticky;bottom:0;background:#f5f7fdf5;padding:14px 0 8px;z-index:3}.choose .start .fine{font-size:11px}}

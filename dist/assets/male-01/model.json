@@ -1,0 +1,336 @@
+{
+  "format": "livliv-model",
+  "version": 4,
+  "name": "\u7537 01 \u00b7 \u6210\u719f\u9867\u554f \u00b7 \u5206\u5c64 v1",
+  "meta": {
+    "generator": {
+      "name": "Character Speaking Lab localized rig",
+      "build": "four-v1"
+    }
+  },
+  "requires": [],
+  "canvas": [
+    1024,
+    1536
+  ],
+  "profile": {
+    "id": "painterly",
+    "facing": "front"
+  },
+  "rig": {
+    "yaw": 0,
+    "pitch": 0,
+    "roll": 0,
+    "bulge": 0,
+    "wind": 0,
+    "breath": 0.3,
+    "sway": 0.3,
+    "brow": 0,
+    "hair_limit": 0,
+    "body": {
+      "yaw": 0.1,
+      "roll": 0.15,
+      "breath": 0.25,
+      "bust": 0
+    },
+    "jaw": 0
+  },
+  "anchors": {
+    "head": {
+      "cx": 512,
+      "cy": 153,
+      "rx": 99.00000000000001,
+      "ry": 125
+    },
+    "face": [
+      420,
+      90,
+      600,
+      270
+    ],
+    "eyes": [
+      [
+        464,
+        125.5,
+        500,
+        142.5
+      ],
+      [
+        522,
+        125.5,
+        558,
+        142.5
+      ]
+    ],
+    "neck_y": 250,
+    "collar_y": 305,
+    "top_y": 5,
+    "bottom_y": 1531,
+    "hair_root_y": 25,
+    "chest": {
+      "cx": 512,
+      "cy": 435,
+      "rx": 130,
+      "ry": 130
+    }
+  },
+  "expressions": [
+    {
+      "id": "x_mouth_o",
+      "label": {
+        "en": "O",
+        "zh-Hant": "O"
+      }
+    },
+    {
+      "id": "x_mouth_fv",
+      "label": {
+        "en": "FV",
+        "zh-Hant": "FV"
+      }
+    },
+    {
+      "id": "x_mouth_th",
+      "label": {
+        "en": "TH",
+        "zh-Hant": "TH"
+      }
+    },
+    {
+      "id": "x_mouth_l",
+      "label": {
+        "en": "L",
+        "zh-Hant": "L"
+      }
+    },
+    {
+      "id": "x_mouth_closed",
+      "label": {
+        "en": "CLOSED",
+        "zh-Hant": "CLOSED"
+      }
+    }
+  ],
+  "layers": [
+    {
+      "id": "intact_base",
+      "texture": "textures/base.png",
+      "x": 0,
+      "y": 0,
+      "w": 1024,
+      "h": 1536,
+      "group": "body",
+      "depth": 0
+    },
+    {
+      "id": "lid_L",
+      "role": "lid_L",
+      "texture": "textures/lid_L.png",
+      "x": 454,
+      "y": 117,
+      "w": 56,
+      "h": 38,
+      "group": "body",
+      "depth": 0
+    },
+    {
+      "id": "eye_L",
+      "role": "eye_L",
+      "texture": "textures/eye_L.png",
+      "mask": "textures/mask_L.png",
+      "pivot": [
+        482,
+        139
+      ],
+      "x": 454,
+      "y": 117,
+      "w": 56,
+      "h": 38,
+      "group": "body",
+      "depth": 0
+    },
+    {
+      "id": "iris_L",
+      "role": "iris_L",
+      "texture": "textures/iris_L.png",
+      "clip": "eye_L",
+      "pivot": [
+        482,
+        139
+      ],
+      "range": [
+        0.8,
+        0.35
+      ],
+      "x": 454,
+      "y": 117,
+      "w": 56,
+      "h": 38,
+      "group": "body",
+      "depth": 0
+    },
+    {
+      "id": "lid_R",
+      "role": "lid_R",
+      "texture": "textures/lid_R.png",
+      "x": 512,
+      "y": 117,
+      "w": 56,
+      "h": 38,
+      "group": "body",
+      "depth": 0
+    },
+    {
+      "id": "eye_R",
+      "role": "eye_R",
+      "texture": "textures/eye_R.png",
+      "mask": "textures/mask_R.png",
+      "pivot": [
+        540,
+        139
+      ],
+      "x": 512,
+      "y": 117,
+      "w": 56,
+      "h": 38,
+      "group": "body",
+      "depth": 0
+    },
+    {
+      "id": "iris_R",
+      "role": "iris_R",
+      "texture": "textures/iris_R.png",
+      "clip": "eye_R",
+      "pivot": [
+        540,
+        139
+      ],
+      "range": [
+        0.8,
+        0.35
+      ],
+      "x": 512,
+      "y": 117,
+      "w": 56,
+      "h": 38,
+      "group": "body",
+      "depth": 0
+    },
+    {
+      "id": "speaking_mouth",
+      "role": "mouth",
+      "texture": "textures/mouth_rest.png",
+      "frames": [
+        "textures/mouth_rest.png",
+        "textures/mouth_half.png",
+        "textures/mouth_open.png",
+        "textures/mouth_round.png",
+        "textures/mouth_wide.png",
+        "textures/mouth_closed.png"
+      ],
+      "visemes": [
+        "closed",
+        "half",
+        "open",
+        "round",
+        "wide",
+        "shut"
+      ],
+      "x": 464,
+      "y": 164,
+      "w": 96,
+      "h": 70,
+      "pivot": [
+        512,
+        191
+      ],
+      "group": "body",
+      "depth": 0
+    },
+    {
+      "id": "manual_mouth_o",
+      "texture": "textures/mouth_o.png",
+      "x": 464,
+      "y": 164,
+      "w": 96,
+      "h": 70,
+      "pivot": [
+        512,
+        191
+      ],
+      "group": "body",
+      "depth": 0,
+      "show": {
+        "x_mouth_o": 1
+      }
+    },
+    {
+      "id": "manual_mouth_fv",
+      "texture": "textures/mouth_fv.png",
+      "x": 464,
+      "y": 164,
+      "w": 96,
+      "h": 70,
+      "pivot": [
+        512,
+        191
+      ],
+      "group": "body",
+      "depth": 0,
+      "show": {
+        "x_mouth_fv": 1
+      }
+    },
+    {
+      "id": "manual_mouth_th",
+      "texture": "textures/mouth_th.png",
+      "x": 464,
+      "y": 164,
+      "w": 96,
+      "h": 70,
+      "pivot": [
+        512,
+        191
+      ],
+      "group": "body",
+      "depth": 0,
+      "show": {
+        "x_mouth_th": 1
+      }
+    },
+    {
+      "id": "manual_mouth_l",
+      "texture": "textures/mouth_l.png",
+      "x": 464,
+      "y": 164,
+      "w": 96,
+      "h": 70,
+      "pivot": [
+        512,
+        191
+      ],
+      "group": "body",
+      "depth": 0,
+      "show": {
+        "x_mouth_l": 1
+      }
+    },
+    {
+      "id": "manual_mouth_closed",
+      "texture": "textures/mouth_closed.png",
+      "x": 464,
+      "y": 164,
+      "w": 96,
+      "h": 70,
+      "pivot": [
+        512,
+        191
+      ],
+      "group": "body",
+      "depth": 0,
+      "show": {
+        "x_mouth_closed": 1
+      }
+    }
+  ]
+}
