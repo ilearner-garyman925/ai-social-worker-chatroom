@@ -53,6 +53,8 @@
 @media(max-width:900px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:600px){.choose{padding:24px 16px}.choose .intro h1{font-size:27px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.cards .avatar{width:96px;height:96px}.cards h2{font-size:18px}.cards .advisor{padding:18px 10px}.choose .start{position:sticky;bottom:0;background:#f5f7fdf5;padding:14px 0 8px;z-index:3}.choose .start .fine{font-size:11px}}
 
+.stage-slot{display:contents}
+.compact-advisor-name{display:none}
 /* Mobile: readable portraits, a dedicated voice area and a spacious survey. */
 @media(max-width:760px){
   .cards .advisor{text-align:center;border-width:2px;border-radius:20px}
@@ -93,4 +95,18 @@
   .text-toggle{min-height:44px;font-size:13px}
   dialog{width:calc(100% - 32px);max-width:440px;padding:22px;box-sizing:border-box}
   .dialog-actions{flex-wrap:wrap}.dialog-actions button{flex:1;white-space:nowrap}
+  .stage-slot{display:block;flex:none;height:clamp(390px,57svh,470px)}
+  .stage-slot .girl-stage{height:100%}
+  .compact-advisor .stage-slot .girl-stage{position:fixed;z-index:4;top:var(--session-header-height,68px);left:12px;right:12px;height:136px;min-height:0;border:1px solid #d6dbee;border-radius:0 0 20px 20px;box-shadow:0 8px 20px #34365624}
+  .compact-advisor .girl-stage .girl-character{inset:8px auto 0 0;width:128px}
+  .compact-advisor .girl-stage .presence,.compact-advisor .girl-stage .timer{display:none}
+  .compact-advisor .compact-advisor-name{display:block;position:absolute;top:12px;left:138px;right:12px;color:#4f4d78;font-size:13px;font-weight:600}
+  .compact-advisor .girl-stage .voice-bubble{left:132px;right:8px;top:36px;bottom:8px;min-height:0;padding:6px 8px;gap:0;border-radius:14px}
+  .compact-advisor .girl-stage .voice-visual,.compact-advisor .girl-stage .live-wave{height:34px}
+  .compact-advisor .live-wave{gap:2px;overflow:hidden}
+  .compact-advisor .live-wave i{min-width:1px}
+  .compact-advisor .girl-stage .voice-copy{min-height:0}
+  .compact-advisor .voice-copy #voice-label{font-size:12px;font-weight:500}
+  .compact-advisor #voice-hint{display:none}
+  .session .survey,.session .health-option,.session #confirm-survey{scroll-margin-top:calc(var(--session-header-height,68px) + 152px)}
 }
